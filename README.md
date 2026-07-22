@@ -4,10 +4,10 @@
 Retrieval-Driven Training-Free AI-Generated Video Attribution, arXiv
 
 ## Dataset
-We use [GenImage](https://github.com/GenImage-Dataset/GenImage) for evaluation, which can be downloaded online. GenImage is composed of 8 classes of fake images (BigGAN, Midjourney, Wukong, Stable_Diffusion_v1.4, Stable_Diffusion_v1.5, ADM, GLIDE, VQDM) and real images from ImageNet. We construct a registered database by randomly selecting 1, 5, and 10 fake images per class, respectively, from the training set of GenImage. All images in the validating set of GenImage are then used as queries to evaluate the performance.
+[GenVidBench](https://github.com/genvidbench/) is a comprehensive and recently introduced benchmark for AI-generated video detection. It contains 100,000 semantic labels, along with the original prompts and images used during the generation process. The dataset combines real-world videos from HD-VG and Vript with synthetic videos produced by eight generators: T2V-Zero (T2VZ), ModelScope (MS), VideoCrafter2 (VC2), Pika, SVD, MuseV, Mora, and CogVideo (CogV). In our setting, we combine HD-VG and Vript into a single Real category.
 
 ## Construct the Database
-You can construct the referencing database of GenImage (1, 5, 10-shot) and save it in the specified location by running the following command:
+You can construct the referencing database of GenVidBench (1, 10, 100-shot) and save it in the specified location by running the following command:
 ```
 python feature.py --dataset_path='/path/to/dataset'
                   --weight_path='path/to/weights.pth'
@@ -17,10 +17,9 @@ python feature.py --dataset_path='/path/to/dataset'
                   --patch_mode='random/max/min'
                   --patch_size=32
 ```
-The last two parameters are effective only when mode is set to 'patch'. Additionally, we provide the finetuned weights ([Baidu](https://pan.baidu.com/s/1xqP-asn2nuMZHMg2ny0aZA?pwd=k2gq) (code: k2gq) and [OneDrive](https://1drv.ms/u/c/52374438c618b7f2/IQALnU7DV8hqQIru2ff6MnIzAZ_gOjQlKjq2OcloUcVKS3I?e=D1RpuQ)) for evaluation. You can download the weights and easily evaluate LIDA.
 
 ## Evaluation
-You can evaluate LIDA on GenImage with Rank-1 and mAP reported by running the following command:
+You can evaluate our approach on GenVidBench with Rank-1 and mAP reported by running the following command:
 ```
 python attribute.py --dataset_path='/path/to/dataset'
                     --weight_path='path/to/weights.pth'
@@ -30,15 +29,8 @@ python attribute.py --dataset_path='/path/to/dataset'
                     --patch_mode='random/max/min'
                     --patch_size=32
 ```
-Similarly, the last two parameters are effective only when mode is set to 'patch', and the weights have been given above.
 
 ```
-@InProceedings{Wang_2026_CVPR,
-    author    = {Wang, Hongsong and Cheng, Renxi and Han, Chaolei and Gui, Jie},
-    title     = {Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    year      = {2026},
-    pages     = {14062-14072}
-}
+
 ```
 
