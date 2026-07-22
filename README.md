@@ -1,6 +1,6 @@
 # Retrieval-Driven-Training-Free-AI-Generated-Video-Attribution
 
-<img width="5120" height="2560" alt="39456" src="https://github.com/user-attachments/assets/32314313-3556-4ecb-8f89-5a2b1e3c7e75" />
+<img width="5120" height="2560" alt="39456" src="https://raw.githubusercontent.com/renxi-seu/Images/refs/heads/main/training-free%20video%20attribution.jpg" />
 Retrieval-Driven Training-Free AI-Generated Video Attribution, arXiv
 
 ## Dataset
