@@ -1,4 +1,4 @@
-# Retrieval-Driven-Training-Free-AI-Generated-Video-Attribution
+# Retrieval-Driven Training-Free AI-Generated Video Attribution
 
 <img width="5120" height="1800" alt="39456" src="https://raw.githubusercontent.com/renxi-seu/Images/refs/heads/main/training-free%20video%20attribution.jpg" />
 Retrieval-Driven Training-Free AI-Generated Video Attribution, arXiv
